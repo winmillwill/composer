@@ -166,7 +166,9 @@ class Factory
             while (isset($repos[$name])) {
                 $name .= '2';
             }
-            $repos[$name] = $rm->createRepository($repo['type'], $repo);
+            if (in_array($repo['type'], $rm->getRepositoryClasses())) {
+              $repos[$name] = $rm->createRepository($repo['type'], $repo);
+            }
         }
 
         return $repos;

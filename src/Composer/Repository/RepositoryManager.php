@@ -112,6 +112,11 @@ class RepositoryManager
         $this->repositoryClasses[$type] = $class;
     }
 
+    public function getRepositoryClasses()
+    {
+        return $this->repositoryClasses;
+    }
+
     /**
      * Returns all repositories, except local one.
      *
